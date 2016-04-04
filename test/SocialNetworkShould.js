@@ -4,20 +4,7 @@ let should = require('chai').should();
 let User = require('../src/User.js');
 let PostAction = require('../src/Actions/PostAction.js');
 let ReadTimelineAction = require('../src/Actions/ReadTimelineAction.js');
-
-function FollowUserAction(userRepository){
-    const _userRepository = userRepository;
-
-    function execute(requestingUserId, userToFollowId) {
-        let requestingUser = _userRepository.getUser(requestingUserId);
-        let userToFollow = _userRepository.getUser(userToFollowId);
-        requestingUser.follow(userToFollow);
-    }
-
-    return {
-        execute
-    }
-}
+let FollowUserAction = require('../src/Actions/FollowUserAction.js');
 
 describe('Social Networking Actions', () => {
     let userId = 'anyId';
