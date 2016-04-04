@@ -16,7 +16,8 @@ function User(id) {
         timeline : () => _timeline,
         followedUsers : () => _followedUsers,
         post : post,
-        follow : follow
+        follow : follow,
+        id: _id
     }
 
 }
