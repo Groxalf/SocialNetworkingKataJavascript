@@ -9,7 +9,7 @@ function ReadTimelineAction(userRepository) {
 
     function execute(userId) {
         let user = userRepository.getUser(userId);
-        return user.timeline;
+        return user.timeline();
     }
 
     return {
@@ -29,7 +29,7 @@ describe('Post Action Should', () => {
 
     it('let a user publish a message in his personal timeline', () => {
         postAction.execute(userId, userMessage);
-        user.timeline[0].should.be.equal(userMessage);
+        user.timeline()[0].should.be.equal(userMessage);
     })
 })
 

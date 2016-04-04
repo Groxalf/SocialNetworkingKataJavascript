@@ -8,7 +8,7 @@ function User(id) {
     }
 
     return {
-        timeline : _timeline,
+        timeline : () => _timeline,
         post : post
     }
 
