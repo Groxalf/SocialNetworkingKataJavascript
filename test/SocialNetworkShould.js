@@ -3,20 +3,7 @@ let should = require('chai').should();
 
 let User = require('../src/User.js');
 let PostAction = require('../src/Actions/PostAction.js');
-
-function ReadTimelineAction(userRepository) {
-    const _userRepository = userRepository;
-
-    function execute(userId) {
-        let user = userRepository.getUser(userId);
-        return user.timeline();
-    }
-
-    return {
-        execute
-    }
-}
-
+let ReadTimelineAction = require('../src/Actions/ReadTimelineAction.js');
 
 describe('Post Action Should', () => {
     let userId = 'anyId';
